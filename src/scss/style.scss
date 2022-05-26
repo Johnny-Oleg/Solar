@@ -1,0 +1,151 @@
+@import 'vars';
+@import 'fonts';
+@import 'reset';
+@import 'libs';
+@import 'global';
+@import 'animations';
+
+.header {
+    height: 100vh;
+    margin-bottom: 150px;
+    padding: 70px 10px 38px;
+    background-image: url('../images/header-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+
+	&__subtitle {
+		margin-top: auto;
+		font-size: 18px;
+		line-height: 25px;
+		font-weight: 400;
+	}
+	
+	&__title {
+		font-size: 64px;
+		line-height: 87px;
+		font-weight: 700;
+
+		span {
+			display: block;
+			font-size: 42px;
+			line-height: 57px;
+		}
+	}
+
+	&__btn {
+		margin-top: 50px;
+		margin-bottom: auto;
+		align-self: center;
+	}
+}
+
+
+
+
+.btn__path {
+    transition: fill .5s;
+}
+
+.btn:hover .btn__path {
+    fill: $yellow;
+}
+
+.btn__text {
+    display: inline-block;
+    margin-left: -57px;
+    font-size: 18px;
+    line-height: 25px;
+    transform: translateY(-17px);
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+	&__item {
+		padding: 0 10px;
+	}
+}
+
+
+
+
+.footer {
+    padding: 70px 0 50px;
+    background-image: url('../images/footer-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: $white;
+
+	&__top {
+		margin-bottom: 150px;
+		display: flex;
+	}
+	
+	&__form {
+		flex-basis: 510px;
+		margin-right: 90px;
+
+		&-btn {
+			padding: 0;
+			border: none;
+			background-color: transparent;
+			color: $white;
+		}
+	}
+
+	&__input {
+		width: 100%;
+		margin-bottom: 60px; 
+		padding-bottom: 11px;
+		display: block;
+		border: none;
+		border: 1px solid $white;
+		background-color: transparent;
+		font-family: 'Noto Sans', sans-serif;
+		font-size: 14px;
+		line-height: 19px;
+		color: $white;
+
+		&::placeholder {
+			font-family: 'Noto Sans', sans-serif;
+			font-size: 14px;
+			line-height: 19px;
+			color: $white;
+		}
+	}
+
+	&__title {
+		margin-bottom: 60px;
+		font-size: 24px;
+		line-height: 43px;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+	
+	&__contacts-item {
+		margin-bottom: 30px;
+		font-size: 18px;
+		line-height: 25px;
+	}
+	
+	&__bottom {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.social {
+		margin-right: -10px;
+	}
+}
+
+@import 'media';

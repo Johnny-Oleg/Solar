@@ -1,0 +1,8 @@
+$white: #fff;
+$yellow: #A9A32A;
+
+@mixin flex($content) {
+	display: flex;
+	justify-content: $content;
+	align-items: center;
+}
