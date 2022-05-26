@@ -1,9 +1,7 @@
 @import 'vars';
 @import 'fonts';
 @import 'reset';
-@import 'libs';
 @import 'global';
-@import 'animations';
 
 .header {
     height: 100vh;
@@ -45,15 +43,14 @@
 	}
 }
 
-
-
-
 .btn__path {
     transition: fill .5s;
 }
 
-.btn:hover .btn__path {
-    fill: $yellow;
+.btn:hover {
+	.btn__path {
+		fill: $yellow;
+	}
 }
 
 .btn__text {
@@ -65,9 +62,7 @@
 }
 
 .social {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex(center);
 
 	&__item {
 		padding: 0 10px;
@@ -172,12 +167,6 @@
 		&-item {
 			flex-basis: 235px;
 			margin-bottom: 17px;
-
-			// img {
-			// 	max-width: 235px;
-			// 	max-height: 200px;
-			// 	object-fit: cover;
-			// }
 		}
 		
 		&-title {
@@ -201,9 +190,6 @@
     left: 340px;
 }
 
-
-
-
 .blockquote {
     margin-bottom: 150px;
     padding: 128px 10px 144px;
@@ -222,6 +208,94 @@
 	}
 }
 
+.clients {
+    margin-bottom: 150px;
+
+	&-slider__box {
+		display: flex;
+	
+		&-img {
+			flex-basis: 510px;
+			margin-right: 90px;
+			margin-bottom: 30px;
+		}
+		
+		&-title {
+			max-width: 478px;
+			margin-bottom: 30px;
+			font-size: 18px;
+			line-height: 25px;
+			font-weight: 700;
+		}
+	
+		&-list {
+			margin-bottom: 50px;
+			margin-left: 50px;
+		}
+		
+		&-item {
+			margin-bottom: 15px;
+		}
+	}
+}
+
+.slick-arrow {
+	path {
+		transition: fill .5s;
+	}
+
+	&:hover {
+		path {
+			fill: $yellow;
+		}
+	}
+}
+
+.step {
+    margin-bottom: 150px;
+
+	&__inner {
+		display: flex;
+	}
+	
+	&__img {
+		flex-basis: 600px;
+		object-fit: cover;
+	}
+	
+	&__content {
+		margin-right: 90px;
+	}
+	
+	&__list {
+		list-style: none;
+		counter-reset: number;
+
+		&-item {
+			counter-increment: number;
+			margin-bottom: 30px;
+
+			&::before {
+				content: '0' counter(number);
+				margin-bottom: 11px;
+				color: #868585;
+			}
+
+			&::nth-child(n + 10) {
+				&::before {
+					content: counter(number);
+				}
+			}
+		}
+		
+		&-title {
+			margin-bottom: 2px;
+			font-size: 18px;
+			line-height: 25px;
+			font-weight: 700;
+		}
+	}
+}
 
 .footer {
     padding: 70px 0 50px;
@@ -245,6 +319,7 @@
 			border: none;
 			background-color: transparent;
 			color: $white;
+			cursor: pointer;
 		}
 	}
 
@@ -284,9 +359,7 @@
 	}
 	
 	&__bottom {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+		@include flex(space-between);
 	}
 
 	.social {
