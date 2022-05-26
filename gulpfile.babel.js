@@ -8,21 +8,16 @@ import imagemin from 'gulp-imagemin';
 import del from 'del';
 import browserSync from 'browser-sync';
 import uglify from 'gulp-uglify-es';
-// import htmlmin from 'gulp-html-min'; not installed
 
 const { src, dest, watch, parallel, series } = pkg;
 const scss = gulpSass(dartSass);
 const sync = browserSync.create();
 
 export function html() {
-	return src('src/html/*.html') // or ['index.html']
+	return src('src/html/*.html')
 		.pipe(include({
 			prefix: '@@',
-			// basepath: '@file'
 		}))
-		// .pipe(htmlmin({
-		// 	collapseWhitespace: true,
-		// }))
 		.pipe(dest('src'));
 
 }
@@ -47,14 +42,12 @@ export function syncing() {
 	sync.init({
 		server: {
 			baseDir: 'src/',
-			// baseDir: './dist',
 		}
 	})
 }
 
 export function scripts() {
 	return src([
-		'node_modules/jquery/dist/jquery.js',
 		'src/js/main.js'
 	])
 		.pipe(concat('main.min.js'))
@@ -69,17 +62,7 @@ export function cleanDist() {
 
 export function images() {
 	return src('src/images/**/*')
-        .pipe(imagemin(
-			// [
-			// 	imagemin.gifsicle({ interlaced: true }),
-			// 	imagemin.mozjpeg({ quality: 75, progressive: true }),
-			// 	imagemin.optipng({ optimizationLevel: 5 }),
-			// 	imagemin.svgo({
-			// 		plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
-			// 	}),
-			// ]
-			)
-        )
+        .pipe(imagemin())
         .pipe(dest('dist/images'));
 }
 
@@ -95,13 +78,3 @@ function building() {
 
 export const build = series(cleanDist, images, building);
 export default parallel(html, styles, scripts, syncing, watching);
-
-// "optionalDependencies": {
-//   "imagemin-gifsicle": "^5.2.0",
-//   "imagemin-jpegtran": "^5.0.2",
-//   "imagemin-optipng": "^5.2.1",
-//   "imagemin-svgo": "^6.0.0"
-// }
-// If these plugins fails to install it doesnt stop gulp-imagemin to install. So first try to go to gulp-imagemin folder where its package.json sits and run npm install.
-
-// If that doesnt fix your problem, you can try to install those plugins manualy - npm install imagemin-gifsicle.

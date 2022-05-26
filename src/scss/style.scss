@@ -74,7 +74,153 @@
 	}
 }
 
+.service {
+    margin-bottom: 150px;
 
+	&__inner {
+		display: flex;
+	}
+	
+	&__content {
+		flex-basis: 510px;
+		margin-right: 90px;
+	}
+	
+	&__box {
+		margin-bottom: 50px;
+
+		&-title {
+			margin-bottom: 15px;
+			font-size: 18px;
+			line-height: 25px;
+			font-weight: 700;
+		}
+	}
+
+	&__img {
+		object-fit: cover;
+	}
+}
+
+.info {
+    margin-bottom: 150px;
+
+	&__inner {
+		display: flex;
+	}
+	
+	&__box {
+		flex-basis: 510px;
+		margin-right: 90px;
+	}
+	
+	&__content {
+		flex-basis: 600px;
+
+		&-text {
+			margin-bottom: 17px;
+			font-size: 18px;
+			line-height: 25px;
+			font-weight: 700;
+		}
+	}
+
+	&-tabs {
+		margin-bottom: 100px;
+
+		&__items {
+			margin-bottom: 120px;
+		}
+
+		&__item {
+			margin-right: 40px;
+			font-size: 18px;
+			line-height: 25px;
+		}
+		
+		&__item--active {
+			border-bottom: 1px solid #303030;
+		}
+
+		&__content {
+			display: none;
+		}
+		
+		&__content--active {
+			display: block;
+		}
+	}
+	
+	&-slider {
+		max-width: 510px;
+	
+		&__img {
+			margin-right: 40px;
+			float: left;
+		}
+		
+		&__text {
+			padding-bottom: 15px;
+		}
+	}
+	
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	
+		&-item {
+			flex-basis: 235px;
+			margin-bottom: 17px;
+
+			// img {
+			// 	max-width: 235px;
+			// 	max-height: 200px;
+			// 	object-fit: cover;
+			// }
+		}
+		
+		&-title {
+			margin-bottom: 5px;
+			font-size: 18px;
+			line-height: 25px;
+			font-weight: 700;
+		}
+	}
+}
+
+.slick-arrow {
+    position: absolute;
+    bottom: -3px;
+    left: 275px;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.slick-right {
+    left: 340px;
+}
+
+
+
+
+.blockquote {
+    margin-bottom: 150px;
+    padding: 128px 10px 144px;
+    text-align: center;
+    background-image: url('../images/blockquote.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+	&__text {
+		max-width: 670px;
+		margin: 0 auto;
+		font-size: 42px;
+		line-height: 57px;
+		color: $white;
+	}
+}
 
 
 .footer {
